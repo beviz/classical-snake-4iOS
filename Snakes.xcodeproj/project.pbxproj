@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F025DD48162BFBA400864999 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F025DD47162BFBA400864999 /* background.png */; };
+		F025DD4B162C02E200864999 /* chew.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F025DD4A162C02E200864999 /* chew.mp3 */; };
 		F055674F161543290069C521 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F055674E161543290069C521 /* QuartzCore.framework */; };
 		F0556751161543290069C521 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0556750161543290069C521 /* OpenGLES.framework */; };
 		F0556753161543290069C521 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0556752161543290069C521 /* OpenAL.framework */; };
@@ -143,6 +145,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F025DD47162BFBA400864999 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		F025DD4A162C02E200864999 /* chew.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chew.mp3; sourceTree = "<group>"; };
 		F055674A161543290069C521 /* Snakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F055674E161543290069C521 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F0556750161543290069C521 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -495,6 +499,8 @@
 		F0556761161543290069C521 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F025DD4A162C02E200864999 /* chew.mp3 */,
+				F025DD47162BFBA400864999 /* background.png */,
 				F05568F616158E750069C521 /* tail.png */,
 				F05568E6161543760069C521 /* link.png */,
 				F05568E7161543760069C521 /* fruit.png */,
@@ -926,6 +932,8 @@
 				F05568EB161543770069C521 /* fruit.png in Resources */,
 				F05568EC161543770069C521 /* head.png in Resources */,
 				F05568F716158E760069C521 /* tail.png in Resources */,
+				F025DD48162BFBA400864999 /* background.png in Resources */,
+				F025DD4B162C02E200864999 /* chew.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

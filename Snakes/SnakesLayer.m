@@ -12,6 +12,7 @@
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
+#import "SimpleAudioEngine.h"
 #import "GameOverScene.h"
 
 #pragma mark - SnakesLayer
@@ -81,8 +82,14 @@ NSMutableArray *grids;
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
-    if((self = [super initWithColor:ccc4(63, 196, 128, 255)])) {
+    if((self = [super init])) {
         winSize = [[CCDirector sharedDirector] winSize];
+        // 初始化背景
+        CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
+        background.position = ccp(winSize.width / 2, winSize.height / 2);
+        background.zOrder = 0;
+        [self addChild: background];
+        
         // 初始化速度
         speed = initSpeed;
         
@@ -107,7 +114,7 @@ NSMutableArray *grids;
 
 // 速度递增
 - (void) incrementSpeed {
-    if (speed > maxSpeed)                                   {
+    if (speed > maxSpeed) {
         // 如果已经达到了最低速（.2）则不变，否则递增速度
         speed -= .05; 
         [self unschedule:@selector(move:)];
@@ -189,13 +196,14 @@ NSMutableArray *grids;
             int angle = 0;
             switch (part.direction) {
                 case LEFT:
-                    angle = 270;
+                    angle = -90;
                     break;
                 case RIGHT:
                     angle = 90;
                     break;
                 case DOWN:
                     angle = 180;
+                    break;
                 case UP:
                     angle = 0;
                 default:
@@ -208,6 +216,9 @@ NSMutableArray *grids;
         // 判断是否吃到了食物
         if (snake.head.sprite.position.x == fruit.position.x && snake.head.sprite.position.y == fruit.position.y) {
             SnakePart* newLink = [snake eat];
+            // 播放吃东西声音
+            [[SimpleAudioEngine sharedEngine] playEffect:@"chew.mp3"];
+            
             [self addChild: newLink.sprite];
             [self freshFood];
             

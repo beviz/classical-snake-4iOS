@@ -20,6 +20,7 @@
         switch (type) {
             case HEAD:
                 self.sprite = [CCSprite spriteWithFile:@"head.png"];
+                self.sprite.zOrder = 1;
                 break;
             case TAIL:
                 self.sprite = [CCSprite spriteWithFile:@"tail.png"];

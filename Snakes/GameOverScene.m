@@ -33,7 +33,7 @@
 
 -(id) init
 {
-    if( (self=[super initWithColor:ccc4(255,255,255,255)] )) {
+    if( (self=[super initWithColor:ccc4(63, 196, 128, 255)])) {
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         self.label = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:32];
