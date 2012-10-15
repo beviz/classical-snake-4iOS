@@ -26,7 +26,7 @@ CCSprite *fruit;
 
 CGSize winSize;
 int cols, rows, step, margin = 1, incrementSpeedPerLinkCount = 5, passGmaeSize = 25;
-float initSpeed = .35, speed;
+float initSpeed = .35, speed, maxSpeed = .1;
 
 // 屏幕划分蛇移动的矩阵:MSMutableArray<MSMutableArray<CGPoint>>
 //                       Y               X           坐标
@@ -107,7 +107,7 @@ NSMutableArray *grids;
 
 // 速度递增
 - (void) incrementSpeed {
-    if (speed > .15) {
+    if (speed > maxSpeed) {
         // 如果已经达到了最低速（.2）则不变，否则递增速度
         speed -= .05; 
         [self unschedule:@selector(move:)];
@@ -212,7 +212,7 @@ NSMutableArray *grids;
             [self freshFood];
             
             // 检查吃完后身长是否达到了尺寸而过关
-            // 不再又结束，靠自己
+            // 不再有结束，看自己能吃多少
 //            if ((snake.parts.count - 2) == passGmaeSize) {
 //                GameOverScene *gameOverScene = [GameOverScene node];
 //                [gameOverScene.layer.label setString:@"你赢啦！真厉害！:）"];
