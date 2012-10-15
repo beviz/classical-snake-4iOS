@@ -107,7 +107,7 @@ NSMutableArray *grids;
 
 // 速度递增
 - (void) incrementSpeed {
-    if (speed > maxSpeed) {
+    if (speed > maxSpeed)                                   {
         // 如果已经达到了最低速（.2）则不变，否则递增速度
         speed -= .05; 
         [self unschedule:@selector(move:)];
