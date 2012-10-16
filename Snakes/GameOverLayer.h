@@ -11,11 +11,7 @@
 @interface GameOverLayer : CCLayerColor {
     CCLabelTTF *_label;
 }
-@property (nonatomic, retain) CCLabelTTF *label;
-@end
-
-@interface GameOverScene : CCScene {
-    GameOverLayer *_layer;
-}
-@property (nonatomic, retain) GameOverLayer *layer;
++ (CCScene *) scene: (int) score;
+// 最终得分
+- (void) setScore: (int) score;
 @end

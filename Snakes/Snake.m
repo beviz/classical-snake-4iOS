@@ -10,14 +10,17 @@
 #import "cocos2d.h"
 
 @implementation Snake {
+    // 正在吃东西？
     BOOL ate;
     int rows;
     int cols;
+    // 移动的目标方向（下一步进行移动）
     enum DIRECTION nextDirection;
 
 }
 
-int initLinkSize = 0;
+// 初始化长度
+int initLinkSize = 10;
 
 
 - (Snake *) initWithGrids: (int) _rows cols: (int) _cols {
@@ -75,6 +78,7 @@ int initLinkSize = 0;
             default:
                 break;
         }
+        [part rotate];
         
     }
     
@@ -104,8 +108,20 @@ int initLinkSize = 0;
 }
 
 // 移动方向
-- (void) moveTo: (enum DIRECTION) to {
+- (void) redirect: (enum DIRECTION) to {
     nextDirection = to;
 }
 
+// 获取蛇身尺寸（刨去头尾）
+- (int) size {
+    return self.parts.count - 2;
+}
+
+// 获取蛇吃的食物数量
+- (int) ateCount {
+    return [self size] - initLinkSize;
+}
+- (oneway void) release {
+    [self.parts release];
+}
 @end

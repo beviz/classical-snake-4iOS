@@ -13,7 +13,7 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "SimpleAudioEngine.h"
-#import "GameOverScene.h"
+#import "GameOverLayer.h"
 
 #pragma mark - SnakesLayer
 
@@ -25,9 +25,11 @@
 Snake *snake;
 CCSprite *fruit;
 
+static BOOL end;
+
 CGSize winSize;
 int cols, rows, step, margin = 1, incrementSpeedPerLinkCount = 5, passGmaeSize = 25;
-float initSpeed = .35, speed, maxSpeed = .1;
+float initSpeed = .35, maxSpeed = .1, currentSpeed;
 
 // 屏幕划分蛇移动的矩阵:MSMutableArray<MSMutableArray<CGPoint>>
 //                       Y               X           坐标
@@ -91,7 +93,7 @@ NSMutableArray *grids;
         [self addChild: background];
         
         // 初始化速度
-        speed = initSpeed;
+        currentSpeed = initSpeed;
         
         grids = [self initGrid];
         snake = [[Snake alloc ] initWithGrids: rows cols: cols];
@@ -104,21 +106,32 @@ NSMutableArray *grids;
         self.isTouchEnabled = YES;
 
         // 蛇身移动
-        [self schedule:@selector(move:) interval: speed];
+        [self schedule:@selector(move:) interval: currentSpeed];
         
         [self freshFood];
 	}
- 
+    
+    end = NO;
+    
+    [self preloadSounds];
+    
 	return self;
 }
 
+- (void) preloadSounds {
+    [[SimpleAudioEngine sharedEngine] preloadEffect:@"chew.mp3"];
+}
+
+-(void) unloadSounds {
+    [[SimpleAudioEngine sharedEngine] unloadEffect:@"chew.mp3"];
+}
 // 速度递增
 - (void) incrementSpeed {
-    if (speed > maxSpeed) {
+    if (currentSpeed > maxSpeed) {
         // 如果已经达到了最低速（.2）则不变，否则递增速度
-        speed -= .05; 
+        currentSpeed -= .05; 
         [self unschedule:@selector(move:)];
-        [self schedule:@selector(move:) interval: speed];
+        [self schedule:@selector(move:) interval: currentSpeed];
         
     }
 }
@@ -177,6 +190,10 @@ NSMutableArray *grids;
     return NO;
 }
 
+- (void) gameOver {
+    [[CCDirector sharedDirector] replaceScene:[GameOverLayer scene:snake.ateCount]];
+}
+
 // 移动身体
 - (void) move:(ccTime)dt  {
     [snake move];
@@ -184,33 +201,13 @@ NSMutableArray *grids;
     // 判断是否出局
     if ([self checkOutOver]) {
         // GAME OVER!
-        GameOverScene *gameOverScene = [GameOverScene node];
-        [gameOverScene.layer.label setString:[NSString stringWithFormat:@"游戏结束！你吃了%d个食物! :)", snake.parts.count - 2]];
-        [[CCDirector sharedDirector] replaceScene:gameOverScene];
-        return;
+        
+        return [self gameOver];
 
     } else {
         
         for (SnakePart *part in snake.parts) {
             part.sprite.position = [((NSValue *)[[grids objectAtIndex: part.gridIndex.y - 1] objectAtIndex: part.gridIndex.x - 1]) CGPointValue];
-            int angle = 0;
-            switch (part.direction) {
-                case LEFT:
-                    angle = -90;
-                    break;
-                case RIGHT:
-                    angle = 90;
-                    break;
-                case DOWN:
-                    angle = 180;
-                    break;
-                case UP:
-                    angle = 0;
-                default:
-                    break;
-            }
-            
-            [part.sprite runAction:[CCRotateTo actionWithDuration:.0 angle: angle]];
         }
         
         // 判断是否吃到了食物
@@ -225,15 +222,15 @@ NSMutableArray *grids;
             // 检查吃完后身长是否达到了尺寸而过关
             // 不再有结束，看自己能吃多少
 //            if ((snake.parts.count - 2) == passGmaeSize) {
-//                GameOverScene *gameOverScene = [GameOverScene node];
-//                [gameOverScene.layer.label setString:@"你赢啦！真厉害！:）"];
-//                [[CCDirector sharedDirector] replaceScene:gameOverScene];
+//                GameOverLayer *GameOverLayer = [GameOverLayer node];
+//                [GameOverLayer.layer.label setString:@"你赢啦！真厉害！:）"];
+//                [[CCDirector sharedDirector] replaceScene:GameOverLayer];
 //                return;
 //            }
             
             
             // 身体每达到5节就提升速度一次
-            if ((snake.parts.count - 2) % incrementSpeedPerLinkCount == 0) {
+            if (([snake ateCount]) % incrementSpeedPerLinkCount == 0) {
                 [self incrementSpeed];
             }
 
@@ -267,7 +264,7 @@ NSMutableArray *grids;
         }
     }
     
-    [snake moveTo: to];
+    [snake redirect: to];
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -278,17 +275,15 @@ NSMutableArray *grids;
 	// cocos2d will automatically release all the children (Label)
 	
 	// don't forget to call "super dealloc"
-	[super dealloc];
-
     [snake release];
-    snake = nil;
     
-    // TODO 内存释放问题
-//    [fruit release];
-//    fruit = nil;
+    [self unloadSounds];
+
+    [grids release];
+    grids = nil;
     
-//    [grids release];
-//    grids = nil;
+    end = YES;
+    [super dealloc];
     
 }
 

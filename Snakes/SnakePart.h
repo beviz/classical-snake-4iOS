@@ -27,6 +27,8 @@
 
 - (SnakePart *) init: (enum PART_TYPE) type;
 - (SnakePart *) init: (enum PART_TYPE) type direction:(enum DIRECTION)direction;
+// 旋转
+- (void) rotate;
 @end
 
 enum DIRECTION {

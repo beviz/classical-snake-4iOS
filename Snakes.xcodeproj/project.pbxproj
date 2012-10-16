@@ -141,7 +141,22 @@
 		F05568F01615478A0069C521 /* Snake.m in Sources */ = {isa = PBXBuildFile; fileRef = F05568EF1615478A0069C521 /* Snake.m */; };
 		F05568F5161570FA0069C521 /* SnakePart.m in Sources */ = {isa = PBXBuildFile; fileRef = F05568F4161570FA0069C521 /* SnakePart.m */; };
 		F05568F716158E760069C521 /* tail.png in Resources */ = {isa = PBXBuildFile; fileRef = F05568F616158E750069C521 /* tail.png */; };
-		F0DFEAE016159F500033B949 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DFEADF16159F500033B949 /* GameOverScene.m */; };
+		F0BF78D1162D308700EFA462 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BF78D0162D308700EFA462 /* libsqlite3.dylib */; };
+		F0BF78D7162D30BE00EFA462 /* Fruit.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF78D4162D30BE00EFA462 /* Fruit.m */; };
+		F0BF78D8162D30BE00EFA462 /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF78D6162D30BE00EFA462 /* MenuLayer.m */; };
+		F0BF7904162D329E00EFA462 /* FMDatabase.h in Sources */ = {isa = PBXBuildFile; fileRef = F0BF78FA162D329E00EFA462 /* FMDatabase.h */; };
+		F0BF7905162D329E00EFA462 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF78FB162D329E00EFA462 /* FMDatabase.m */; };
+		F0BF7906162D329E00EFA462 /* FMDatabaseAdditions.h in Sources */ = {isa = PBXBuildFile; fileRef = F0BF78FC162D329E00EFA462 /* FMDatabaseAdditions.h */; };
+		F0BF7907162D329E00EFA462 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF78FD162D329E00EFA462 /* FMDatabaseAdditions.m */; };
+		F0BF7908162D329E00EFA462 /* FMDatabasePool.h in Sources */ = {isa = PBXBuildFile; fileRef = F0BF78FE162D329E00EFA462 /* FMDatabasePool.h */; };
+		F0BF7909162D329E00EFA462 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF78FF162D329E00EFA462 /* FMDatabasePool.m */; };
+		F0BF790A162D329E00EFA462 /* FMDatabaseQueue.h in Sources */ = {isa = PBXBuildFile; fileRef = F0BF7900162D329E00EFA462 /* FMDatabaseQueue.h */; };
+		F0BF790B162D329E00EFA462 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF7901162D329E00EFA462 /* FMDatabaseQueue.m */; };
+		F0BF790C162D329E00EFA462 /* FMResultSet.h in Sources */ = {isa = PBXBuildFile; fileRef = F0BF7902162D329E00EFA462 /* FMResultSet.h */; };
+		F0BF790D162D329E00EFA462 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF7903162D329E00EFA462 /* FMResultSet.m */; };
+		F0BF7911162D3A7300EFA462 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF7910162D3A7300EFA462 /* GameOverLayer.m */; };
+		F0E28453162D47B200D57A88 /* Snake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0E28451162D47B200D57A88 /* Snake.xcdatamodeld */; };
+		F0E2845A162D4A9300D57A88 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E28459162D4A9300D57A88 /* Score.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -417,8 +432,26 @@
 		F05568F3161570FA0069C521 /* SnakePart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakePart.h; sourceTree = "<group>"; };
 		F05568F4161570FA0069C521 /* SnakePart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnakePart.m; sourceTree = "<group>"; };
 		F05568F616158E750069C521 /* tail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tail.png; sourceTree = "<group>"; };
-		F0DFEADE16159F500033B949 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
-		F0DFEADF16159F500033B949 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		F0BF78D0162D308700EFA462 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F0BF78D3162D30BE00EFA462 /* Fruit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fruit.h; sourceTree = "<group>"; };
+		F0BF78D4162D30BE00EFA462 /* Fruit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fruit.m; sourceTree = "<group>"; };
+		F0BF78D5162D30BE00EFA462 /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
+		F0BF78D6162D30BE00EFA462 /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLayer.m; sourceTree = "<group>"; };
+		F0BF78FA162D329E00EFA462 /* FMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = fmdb/FMDatabase.h; sourceTree = "<group>"; };
+		F0BF78FB162D329E00EFA462 /* FMDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = fmdb/FMDatabase.m; sourceTree = "<group>"; };
+		F0BF78FC162D329E00EFA462 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		F0BF78FD162D329E00EFA462 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		F0BF78FE162D329E00EFA462 /* FMDatabasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
+		F0BF78FF162D329E00EFA462 /* FMDatabasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
+		F0BF7900162D329E00EFA462 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		F0BF7901162D329E00EFA462 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		F0BF7902162D329E00EFA462 /* FMResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = fmdb/FMResultSet.h; sourceTree = "<group>"; };
+		F0BF7903162D329E00EFA462 /* FMResultSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = fmdb/FMResultSet.m; sourceTree = "<group>"; };
+		F0BF790F162D3A6A00EFA462 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverLayer.h; sourceTree = "<group>"; };
+		F0BF7910162D3A7300EFA462 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverLayer.m; sourceTree = "<group>"; };
+		F0E28452162D47B200D57A88 /* Snake.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Snake.xcdatamodel; sourceTree = "<group>"; };
+		F0E28458162D4A9300D57A88 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		F0E28459162D4A9300D57A88 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +459,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0BF78D1162D308700EFA462 /* libsqlite3.dylib in Frameworks */,
 				F055674F161543290069C521 /* QuartzCore.framework in Frameworks */,
 				F0556751161543290069C521 /* OpenGLES.framework in Frameworks */,
 				F0556753161543290069C521 /* OpenAL.framework in Frameworks */,
@@ -444,6 +478,7 @@
 		F055673F161543280069C521 = {
 			isa = PBXGroup;
 			children = (
+				F0BF790E162D32EF00EFA462 /* fmdb */,
 				F0556760161543290069C521 /* Snakes */,
 				F055674D161543290069C521 /* Frameworks */,
 				F055674B161543290069C521 /* Products */,
@@ -461,6 +496,7 @@
 		F055674D161543290069C521 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0BF78D0162D308700EFA462 /* libsqlite3.dylib */,
 				F055674E161543290069C521 /* QuartzCore.framework */,
 				F0556750161543290069C521 /* OpenGLES.framework */,
 				F0556752161543290069C521 /* OpenAL.framework */,
@@ -477,8 +513,15 @@
 		F0556760161543290069C521 /* Snakes */ = {
 			isa = PBXGroup;
 			children = (
-				F0DFEADE16159F500033B949 /* GameOverScene.h */,
-				F0DFEADF16159F500033B949 /* GameOverScene.m */,
+				F0BF7910162D3A7300EFA462 /* GameOverLayer.m */,
+				F0E28451162D47B200D57A88 /* Snake.xcdatamodeld */,
+				F0BF790F162D3A6A00EFA462 /* GameOverLayer.h */,
+				F0BF78D3162D30BE00EFA462 /* Fruit.h */,
+				F0BF78D4162D30BE00EFA462 /* Fruit.m */,
+				F0BF78D5162D30BE00EFA462 /* MenuLayer.h */,
+				F0BF78D6162D30BE00EFA462 /* MenuLayer.m */,
+				F0E28458162D4A9300D57A88 /* Score.h */,
+				F0E28459162D4A9300D57A88 /* Score.m */,
 				F05568D81615432F0069C521 /* AppDelegate.h */,
 				F05568D91615432F0069C521 /* AppDelegate.m */,
 				F05568DB1615432F0069C521 /* SnakesLayer.h */,
@@ -865,6 +908,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F0BF790E162D32EF00EFA462 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				F0BF78FA162D329E00EFA462 /* FMDatabase.h */,
+				F0BF78FB162D329E00EFA462 /* FMDatabase.m */,
+				F0BF78FC162D329E00EFA462 /* FMDatabaseAdditions.h */,
+				F0BF78FD162D329E00EFA462 /* FMDatabaseAdditions.m */,
+				F0BF78FE162D329E00EFA462 /* FMDatabasePool.h */,
+				F0BF78FF162D329E00EFA462 /* FMDatabasePool.m */,
+				F0BF7900162D329E00EFA462 /* FMDatabaseQueue.h */,
+				F0BF7901162D329E00EFA462 /* FMDatabaseQueue.m */,
+				F0BF7902162D329E00EFA462 /* FMResultSet.h */,
+				F0BF7903162D329E00EFA462 /* FMResultSet.m */,
+			);
+			name = fmdb;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -944,6 +1004,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0BF7904162D329E00EFA462 /* FMDatabase.h in Sources */,
+				F0BF7905162D329E00EFA462 /* FMDatabase.m in Sources */,
+				F0BF7906162D329E00EFA462 /* FMDatabaseAdditions.h in Sources */,
+				F0BF7907162D329E00EFA462 /* FMDatabaseAdditions.m in Sources */,
+				F0BF7908162D329E00EFA462 /* FMDatabasePool.h in Sources */,
+				F0BF7909162D329E00EFA462 /* FMDatabasePool.m in Sources */,
+				F0BF790A162D329E00EFA462 /* FMDatabaseQueue.h in Sources */,
+				F0BF790B162D329E00EFA462 /* FMDatabaseQueue.m in Sources */,
+				F0BF790C162D329E00EFA462 /* FMResultSet.h in Sources */,
+				F0BF790D162D329E00EFA462 /* FMResultSet.m in Sources */,
 				F055677F161543290069C521 /* CCAction.m in Sources */,
 				F0556782161543290069C521 /* CCActionCamera.m in Sources */,
 				F0556785161543290069C521 /* CCActionCatmullRom.m in Sources */,
@@ -1050,7 +1120,11 @@
 				F05568E01615432F0069C521 /* IntroLayer.m in Sources */,
 				F05568F01615478A0069C521 /* Snake.m in Sources */,
 				F05568F5161570FA0069C521 /* SnakePart.m in Sources */,
-				F0DFEAE016159F500033B949 /* GameOverScene.m in Sources */,
+				F0BF78D7162D30BE00EFA462 /* Fruit.m in Sources */,
+				F0BF78D8162D30BE00EFA462 /* MenuLayer.m in Sources */,
+				F0BF7911162D3A7300EFA462 /* GameOverLayer.m in Sources */,
+				F0E28453162D47B200D57A88 /* Snake.xcdatamodeld in Sources */,
+				F0E2845A162D4A9300D57A88 /* Score.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1158,6 +1232,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F0E28451162D47B200D57A88 /* Snake.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F0E28452162D47B200D57A88 /* Snake.xcdatamodel */,
+			);
+			currentVersion = F0E28452162D47B200D57A88 /* Snake.xcdatamodel */;
+			path = Snake.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F0556741161543280069C521 /* Project object */;
 }

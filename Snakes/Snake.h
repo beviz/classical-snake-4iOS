@@ -23,11 +23,17 @@
 // 移动
 - (void) move;
 
-// 移动方向
-- (void) moveTo: (enum DIRECTION) to;
+// 改变方向
+- (void) redirect: (enum DIRECTION) to;
 
-// 停止
+// 吃东西
 - (SnakePart*) eat;
 
+// 蛇身长（刨去头尾）
+- (int) size;
+
+// 获取蛇吃的食物数量
+- (int) ateCount ;
+    
 - (Snake *) initWithGrids: (int) rows cols: (int) cols ;
 @end

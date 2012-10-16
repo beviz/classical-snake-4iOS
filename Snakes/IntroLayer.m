@@ -10,7 +10,7 @@
 // Import the interfaces
 #import "IntroLayer.h"
 #import "SnakesLayer.h"
-
+#import "MenuLayer.h"
 
 #pragma mark - IntroLayer
 
@@ -60,6 +60,6 @@
 
 -(void) makeTransition:(ccTime)dt
 {
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[SnakesLayer scene] withColor:ccWHITE]];
+	[[CCDirector sharedDirector] replaceScene:[MenuLayer scene]];
 }
 @end
